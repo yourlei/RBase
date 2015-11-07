@@ -248,7 +248,64 @@ while (x < 5) {
 }
 # --------------------------
 # --------------------------
+<<<<<<< HEAD
 
+=======
+# chapter 11 分组操作
+## apply
+theMatrix <- matrix(1:9, nrow = 3)
+apply(theMatrix, 1, sum)
+
+
+apply(theMatrix, 2, sum)
+
+# same as
+rowSums(theMatrix)
+colSums(theMatrix)
+
+theMatrix[2, 1] <- NA
+apply(theMatrix, 1, sum)
+apply(theMatrix, 1, sum, na.rm = TRUE)
+
+theMatrix
+#       [,1] [,2] [,3]
+# [1,]    1    4    7
+# [2,]   NA    5    8
+# [3,]    3    6    9
+
+## lapply
+theList <- list(A = matrix(1:9, 3), B = 1:8, c = matrix(1:4, 2))
+lapply(theList, sum)
+# $A
+# [1] 45
+# 
+# $B
+# [1] 36
+# 
+# $c
+# [1] 10
+
+## sapply
+sapply(theList, sum)
+# A  B  c 
+# 45 36 10
+
+# -------------------------
+# mapply
+firstList <- list(A = matrix(1:16, 4), B = matrix(1:9, 3))
+secondList <- list(A = matrix(1:9, 3), B = matrix(1:16, 8) )
+
+simpleFunc <- function(x, y) {
+  NROW(x) + NROW(y)
+}
+mapply(simpleFunc, firstList, secondList)
+
+# A  B 
+# 7 1
+? mapply
+
+mapply(rep, 1:4, 4)
+>>>>>>> be158c1ba720fae22a04de0c73cbc8237c802cfd
 
 
 

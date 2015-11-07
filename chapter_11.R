@@ -14,6 +14,7 @@ ggplot(data1, aes(x = cut, y = price)) + geom_line(group = cut)
 
 data2 <- aggregate(price ~ cut + color, diamonds, mean)
 plot(data2)
+<<<<<<< HEAD
 
 # plyr package
 require(plyr)
@@ -31,3 +32,5 @@ baseball$OBP <- with(baseball, (h + bb + hbp) / (ab + bb + hbp + sf))
 tail(baseball)
 
 
+=======
+>>>>>>> be158c1ba720fae22a04de0c73cbc8237c802cfd
